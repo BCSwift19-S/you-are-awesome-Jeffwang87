@@ -10,12 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var Messagelabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("hello")
     }
 
 
+    @IBAction func MessagebuttonPressed(_ sender: UIButton) {
+        Messagelabel.text = "You Are Awesome"
+    }
 }
 
