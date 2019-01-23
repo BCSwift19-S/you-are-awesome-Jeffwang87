@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var index = 0
 
     @IBOutlet weak var Messagelabel: UILabel!
     
@@ -19,19 +20,14 @@ class ViewController: UIViewController {
 
 
     @IBAction func MessagebuttonPressed(_ sender: UIButton) {
-        let message1 = "You Are Awesome"
-        let message2 = "You Are Great"
-        let message3 = "You Are Amazing"
-        
-        if Messagelabel.text == message1{
-            Messagelabel.text = message2
+        let messages = ["You AreFantastic!","You Are Great!","You Are Amazing!","You Are Awesome!"]
+        Messagelabel.text = messages[index]
+        if index == messages.count-1
+        {
+            index = 0
+        } else{
+            index = index+1
         }
-        else if Messagelabel.text == message2{
-            Messagelabel.text = message3
-        }else{
-            Messagelabel.text = message1
-        }
-        
     }
   
 }
