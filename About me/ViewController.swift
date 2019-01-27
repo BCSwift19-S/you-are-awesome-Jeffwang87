@@ -21,13 +21,7 @@ class ViewController: UIViewController {
 
     @IBAction func MessagebuttonPressed(_ sender: UIButton) {
         let messages = ["You AreFantastic!","You Are Great!","You Are Amazing!","You Are Awesome!"]
-        Messagelabel.text = messages[index]
-        if index == messages.count-1
-        {
-            index = 0
-        } else{
-            index = index+1
-        }
+        Messagelabel.text = messages.randomElement()!
     }
   
 }
