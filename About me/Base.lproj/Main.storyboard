@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,26 +15,46 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="About_me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myf-R0-CTN">
-                                <rect key="frame" x="69" y="84" width="236" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myf-R0-CTN">
+                                <rect key="frame" x="44" y="44" width="326" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="R9I-bB-cTk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.53958302736282349" green="0.066236875951290131" blue="0.041368521749973297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKf-hF-BwW">
-                                <rect key="frame" x="135" y="215" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKf-hF-BwW">
+                                <rect key="frame" x="132" y="217" width="150" height="43"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="MessagebuttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qGQ-uU-Wv1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1042-xquisitelandscaping-dlevy-02-small" translatesAutoresizingMaskIntoConstraints="NO" id="pQo-HP-Mfa">
+                                <rect key="frame" x="51" y="310" width="312" height="452"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="452" id="o1w-pr-4a9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.85294061899185181" green="0.78656584024429321" blue="0.62281370162963867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="myf-R0-CTN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="6BK-ce-E5E"/>
+                            <constraint firstItem="WKf-hF-BwW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="BrP-uN-S0Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pQo-HP-Mfa" secondAttribute="bottom" constant="100" id="Csl-Yy-Kds"/>
+                            <constraint firstItem="myf-R0-CTN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ENk-aa-2A8"/>
+                            <constraint firstItem="pQo-HP-Mfa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="LC5-TC-Lg0"/>
+                            <constraint firstItem="pQo-HP-Mfa" firstAttribute="top" secondItem="WKf-hF-BwW" secondAttribute="bottom" constant="50" id="USW-lH-7yZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pQo-HP-Mfa" secondAttribute="trailing" constant="51" id="gh3-u5-rjC"/>
+                            <constraint firstItem="myf-R0-CTN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n1k-68-eEs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WKf-hF-BwW" secondAttribute="trailing" constant="132" id="nLP-Bj-5Kx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="myf-R0-CTN" secondAttribute="trailing" constant="44" id="s6B-xN-JZU"/>
+                            <constraint firstItem="WKf-hF-BwW" firstAttribute="top" secondItem="myf-R0-CTN" secondAttribute="bottom" constant="50" id="ywf-cg-tN7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -46,4 +66,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.74384236453201"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1042-xquisitelandscaping-dlevy-02-small" width="800" height="533"/>
+    </resources>
 </document>
