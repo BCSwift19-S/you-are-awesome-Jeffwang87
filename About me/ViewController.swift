@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     var index = 0
     var imageindex = -1
+    var awesomePlayer = AVAudioPlayer()
+    var soundindex = -1
 
     @IBOutlet weak var awesomeImageView: UIImageView!
     @IBOutlet weak var Messagelabel: UILabel!
@@ -37,7 +40,29 @@ class ViewController: UIViewController {
         
         imageindex = newIndex
         awesomeImageView.image = UIImage(named: "image\(imageindex)")
-    
-}
 
+        repeat{
+            newIndex = Int.random(in: 1..<4)
+        }while soundindex == newIndex
+        
+        soundindex = newIndex
+        
+        var soundName = "sound\(soundindex)"
+        
+        if let sound = NSDataAsset(name:soundName){
+            do{
+                try awesomePlayer = AVAudioPlayer(data: sound.data)
+                awesomePlayer.play()
+            } catch {
+                print("Error")
+                }
+        }
+        else {
+            print("Error")
+        }
+       
+        
+       
+  
+    }
 }
