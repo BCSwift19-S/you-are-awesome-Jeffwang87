@@ -30,12 +30,12 @@ class ViewController: UIViewController {
         }while lastNumber == newIndex
         return newIndex
     }
-    func playSound(soundName: String){
+    func playSound(soundName: String, audioPlayer: inout AVAudioPlayer){
         
         if let sound = NSDataAsset(name:soundName){
             do{
-                try awesomePlayer = AVAudioPlayer(data: sound.data)
-                awesomePlayer.play()
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
             } catch {
                 print("Error")
             }
@@ -59,6 +59,6 @@ class ViewController: UIViewController {
         soundindex = nonRepeatingRandom(lastNumber: soundindex, maxValue: 3)
         
         let soundName = "sound\(soundindex)"
-        playSound(soundName: soundName)
+        playSound(soundName: soundName, audioPlayer: &awesomePlayer)
     }
 }
