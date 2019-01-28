@@ -22,32 +22,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
-    @IBAction func MessagebuttonPressed(_ sender: UIButton) {
-        let messages = ["You AreFantastic!","You Are Great!","You Are Amazing!","You Are Awesome!"]
-        var newIndex: Int
     
+    func nonRepeatingRandom(lastNumber: Int, maxValue: Int) -> Int{
+        var newIndex: Int
         repeat{
-            newIndex = Int.random(in: 0..<messages.count)
-    } while index == newIndex
-        index = newIndex
-        Messagelabel.text = messages[index]
-        
-        repeat{
-            newIndex = Int.random(in: 0..<4)
-        }while imageindex == newIndex
-        
-        imageindex = newIndex
-        awesomeImageView.image = UIImage(named: "image\(imageindex)")
-
-        repeat{
-            newIndex = Int.random(in: 1..<4)
-        }while soundindex == newIndex
-        
-        soundindex = newIndex
-        
-        var soundName = "sound\(soundindex)"
+            newIndex = Int.random(in: 0..<maxValue)
+        }while lastNumber == newIndex
+        return newIndex
+    }
+    func playSound(soundName: String){
         
         if let sound = NSDataAsset(name:soundName){
             do{
@@ -55,14 +38,27 @@ class ViewController: UIViewController {
                 awesomePlayer.play()
             } catch {
                 print("Error")
-                }
+            }
         }
         else {
             print("Error")
         }
-       
         
-       
-  
+    }
+
+
+    @IBAction func MessagebuttonPressed(_ sender: UIButton) {
+        let messages = ["You AreFantastic!","You Are Great!","You Are Amazing!","You Are Awesome!"]
+    
+        index = nonRepeatingRandom(lastNumber: index, maxValue: 4)
+        Messagelabel.text = messages[index]
+        
+        imageindex = nonRepeatingRandom(lastNumber: imageindex, maxValue: 4)
+        awesomeImageView.image = UIImage(named: "image\(imageindex)")
+        
+        soundindex = nonRepeatingRandom(lastNumber: soundindex, maxValue: 3)
+        
+        let soundName = "sound\(soundindex)"
+        playSound(soundName: soundName)
     }
 }
